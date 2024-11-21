@@ -1,6 +1,8 @@
 
 # Bank Application
 
+This is a comprehensive Bank Management System that empowers users to efficiently organize their transactions. The backend is built using Node.js and Express. The data is managed using mongodb.
+
 Backend_Github_Url: https://github.com/tanuj8851/BankApplication_Backend
 
 Backend_Deployed_Url: https://bankapplication-backend-qhkz.onrender.com
@@ -10,9 +12,6 @@ Backend_Deployed_Url: https://bankapplication-backend-qhkz.onrender.com
 
 - https://drive.google.com/file/d/1nX2nJShg5O4NF8XlWh-uOukzMcF8FW1g/view?usp=sharing
 
-# Bank Application
-
-This is a comprehensive Bank Management System that empowers users to efficiently organize their transactions. The backend is built using Node.js and Express. The data is managed using mongodb.
 
 ## Features 
 
