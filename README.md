@@ -9,3 +9,9 @@ Backend_Deployed_Url: https://bankapplication-backend-qhkz.onrender.com
 # VIDEO TESTING
 
 - https://drive.google.com/file/d/1nX2nJShg5O4NF8XlWh-uOukzMcF8FW1g/view?usp=sharing
+
+
+# IMAGES
+
+## 1. LANDING PAGE
+(https://drive.google.com/file/d/1zorfW2fZt9yeaTPdPWWPR9Rpd5QAk5Ym/view?usp=sharing)
