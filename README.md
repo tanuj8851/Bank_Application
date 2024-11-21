@@ -10,6 +10,29 @@ Backend_Deployed_Url: https://bankapplication-backend-qhkz.onrender.com
 
 - https://drive.google.com/file/d/1nX2nJShg5O4NF8XlWh-uOukzMcF8FW1g/view?usp=sharing
 
+# Bank Application
+
+This is a comprehensive Bank Management System that empowers users to efficiently organize their transactions. The backend is built using Node.js and Express. The data is managed using mongodb.
+
+## Features 
+
+### Task Operations 
+
+- **User Register  :** User Can Register.
+- **User Login :** Users can login.
+- **User logout :** Users can logout.
+- **User Profile  :** User Profile .
+  
+- **Deposit money  :** User can deposit money to own account.
+- **Withdraw money :** Users can withdraw money from own account.
+- **Transfer money :** Users can transfer own money to other users account.
+- **Transactions History  :** User can show transactions history.
+
+
+## Tech Stack 
+**Server:** Handles business logic, transaction operations, and database interactions using Node.js and Express.
+**Database:** MonogoDB
+
 
 # IMAGES
 
