@@ -14,5 +14,5 @@ Backend_Deployed_Url: https://bankapplication-backend-qhkz.onrender.com
 # IMAGES
 
 ## 1. LANDING PAGE
-![Demo App](https://drive.google.com/file/d/1zorfW2fZt9yeaTPdPWWPR9Rpd5QAk5Ym/view?usp=sharing)
+![Demo App](https://i.ibb.co/MZmZvLn/Screenshot-2024-11-21-203112.png)
 
