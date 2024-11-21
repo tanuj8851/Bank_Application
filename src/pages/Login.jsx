@@ -1,25 +1,32 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
-// import { loginUser } from '../services/api';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
     const [formData, setFormData] = useState({ username: "", pin: "" });
-    const navigate = useNavigate();
-    const { login } = useAuth();
+    const { login, isAuthenticated } = useAuth();
+    const Navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
+    useEffect(() => {
+
+    }, [isAuthenticated])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await login(formData);
             toast.success("Logged in successfully!");
-            navigate("/dashboard");
+            Navigate("/dashboard");
         } catch (err) {
-            toast.error(err.response.data.message || "Login failed");
+            toast.error("Login failed");
+            console.log(err);
+
         }
     };
 

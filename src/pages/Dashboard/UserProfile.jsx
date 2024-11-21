@@ -56,9 +56,6 @@ const UserProfile = () => {
                                 <strong>Balance:</strong> ${user.balance.toLocaleString()}
                             </p>
                             <p className="text-gray-700">
-                                <strong>Failed Attempts:</strong> {user.failedAttempts}
-                            </p>
-                            <p className="text-gray-700">
                                 <strong>Account Status:</strong> {user.isLocked ? "Locked" : "Active"}
                             </p>
                         </div>

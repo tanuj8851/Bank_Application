@@ -13,9 +13,11 @@ const TransferMoney = () => {
         e.preventDefault();
         try {
             await transferMoney(formData);
+            // console.log("error", res);
+
             toast.success("Money transferred successfully!");
         } catch (err) {
-            toast.error(err.response.data.message || "Failed to transfer money");
+            toast.error(err.response.error || "Failed to transfer money");
         }
     };
 

@@ -33,7 +33,6 @@ const Sidebar = () => {
                 </div>
                 <h3 className="text-xl font-bold">{user?.username}</h3>
                 {user ? <p>{user.username}</p> : <p>dummyuser</p>}
-                {user ? <p>{user.balance}</p> : <p>10000</p>}
             </div>
 
             {/* Navigation Links */}

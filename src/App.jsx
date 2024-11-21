@@ -12,17 +12,24 @@ import WithdrawMoney from './pages/Dashboard/WithdrawMoney';
 import TransferMoney from './pages/Dashboard/TransferMoney';
 import History from './pages/Dashboard/History';
 import UserProfile from './pages/Dashboard/UserProfile';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
 
   return (
+
     <div className='w-full  bg-gray-50'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path="/dashboard" element={<DashBoard />}>
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <DashBoard />
+          </ProtectedRoute>
+        }>
+
           <Route path="profile" element={<UserProfile />} />
           <Route path="deposit" element={<DepositMoney />} />
           <Route path="withdraw" element={<WithdrawMoney />} />
@@ -32,6 +39,7 @@ function App() {
       </Routes>
       <Toaster />
     </div>
+
   )
 }
 

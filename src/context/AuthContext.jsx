@@ -1,8 +1,13 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import api from "../services/api";
+import toast from "react-hot-toast";
 
-export const AuthContext = createContext();
 
+
+const AuthContext = createContext();
+
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
     return useContext(AuthContext);
 };
@@ -12,19 +17,32 @@ export const AuthProvider = ({ children }) => {
         const savedUser = localStorage.getItem("user");
         return savedUser ? JSON.parse(savedUser) : null;
     });
+    const [token, setToken] = useState(() => {
+        const savedToken = localStorage.getItem("token");
+        return savedToken ? JSON.parse(savedToken) : null;
+    });
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
 
     const login = async (credentials) => {
         try {
-            const response = await api.post("/user/login", credentials);
+            const response = await api.post("/user/login", credentials, { withCredentials: true });
             if (response.status === 200) {
                 setUser(response.data.user);
+                setToken(response.data.token)
                 localStorage.setItem("user", JSON.stringify(response.data.user));
+                localStorage.setItem("token", JSON.stringify(response.data.token));
                 setIsAuthenticated(true);
             }
 
         } catch (error) {
-            console.error("Login failed:", error.message);
+            if (error.response) {
+                toast.error(`${error.response.data.message} ${error.response.data.attemptLeft || ''}`);
+
+
+
+            }
         }
 
     };
@@ -34,7 +52,9 @@ export const AuthProvider = ({ children }) => {
 
     const userProfile = async () => {
         try {
-            const response = await api.get("/user/profile");
+            const response = await api.get("/user/profile", {
+                withCredentials: true
+            });
             if (response.status === 200) {
                 setUser(response.data.user);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
@@ -46,10 +66,14 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await api.post("/user/logout");
+            const res = await api.post("/user/logout", {
+                withCredentials: true
+            });
+
             setUser(null);
             localStorage.removeItem("user");
             setIsAuthenticated(false);
+
         } catch (error) {
             console.error("Logout failed:", error.message);
         }
@@ -58,7 +82,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, login, logout, userProfile }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, login, logout, userProfile, token }}>
             {children}
         </AuthContext.Provider>
     );
