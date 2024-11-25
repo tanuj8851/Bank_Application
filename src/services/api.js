@@ -3,7 +3,8 @@ import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_Backend_Url,
+  // baseURL: import.meta.env.VITE_Backend_Url,
+  baseURL: "https://bankapplication-backend-qhkz.onrender.com/api",
 });
 
 api.interceptors.request.use(
