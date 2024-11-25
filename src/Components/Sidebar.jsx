@@ -29,7 +29,7 @@ const Sidebar = () => {
             {/* User Profile */}
             <div className="mb-8 text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-500 text-2xl font-bold mb-2">
-                    {/* {user?.username.toUpperCase()} */}
+                    {user?.username[0].toUpperCase()}
                 </div>
                 <h3 className="text-xl font-bold">{user?.username}</h3>
                 {user ? <p>{user.username}</p> : <p>dummyuser</p>}
